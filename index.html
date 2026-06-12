@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daily Wellness Guide</title>
+<meta name="description" content="Explore simple wellness guidance, balanced lifestyle tips, recovery support, mindful routines, and everyday wellness resources.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f7f3ec;
+    color:#24302c;
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:1180px;
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+}
+
+.header{
+    background:#fffaf2;
+    padding:18px 0;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    position:sticky;
+    top:0;
+    z-index:99;
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    color:#2f5d50;
+}
+
+.nav-links a{
+    color:#334155;
+    margin-left:22px;
+    font-weight:600;
+}
+
+.nav-btn{
+    background:#2f5d50;
+    color:#fff !important;
+    padding:11px 22px;
+    border-radius:30px;
+}
+
+/* HERO */
+.hero{
+    padding:80px 0;
+    background:#fffaf2;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:55px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:#e8d9bd;
+    color:#2f5d50;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.08;
+    margin-bottom:22px;
+    color:#20342e;
+}
+
+.hero p{
+    font-size:19px;
+    color:#5b6b64;
+    max-width:620px;
+}
+
+.hero-actions{
+    margin-top:30px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    background:#2f5d50;
+    color:#fff;
+    padding:15px 32px;
+    border-radius:40px;
+    font-weight:800;
+}
+
+.btn-light{
+    background:#fff;
+    color:#2f5d50;
+    border:2px solid #2f5d50;
+}
+
+.hero-img{
+    position:relative;
+}
+
+.hero-img img{
+    width:100%;
+    border-radius:34px;
+    display:block;
+    box-shadow:0 20px 50px rgba(0,0,0,.16);
+}
+
+.floating-card{
+    position:absolute;
+    left:-25px;
+    bottom:35px;
+    background:#fff;
+    padding:18px 22px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    max-width:260px;
+}
+
+.floating-card strong{
+    color:#2f5d50;
+}
+
+/* SECTIONS */
+.section{
+    padding:40px 0;
+}
+
+.section-head{
+    max-width:760px;
+    margin:0 auto 45px;
+    text-align:center;
+}
+
+.section-head h2{
+    font-size:40px;
+    color:#20342e;
+    line-height:1.2;
+    margin-bottom:14px;
+}
+
+.section-head p{
+    color:#64748b;
+    font-size:17px;
+}
+
+/* FEATURE STRIP */
+.strip{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.strip-box{
+    background:#fff;
+    padding:26px;
+    border-radius:22px;
+    box-shadow:0 12px 30px rgba(47,93,80,.10);
+}
+
+.strip-box span{
+    font-size:34px;
+}
+
+.strip-box h3{
+    margin:12px 0 8px;
+    color:#2f5d50;
+    font-size:20px;
+}
+
+.strip-box p{
+    color:#64748b;
+}
+
+/* SPLIT SECTION */
+.split{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.split img{
+    width:100%;
+    border-radius:30px;
+    box-shadow:0 18px 45px rgba(0,0,0,.14);
+}
+
+.text-box h2{
+    font-size:26px;
+    line-height:1.2;
+    color:#20342e;
+    margin-bottom:18px;
+}
+
+.text-box p{
+    color:#5b6b64;
+    margin-bottom:20px;
+}
+
+.check-list{
+    list-style:none;
+    margin-top:25px;
+}
+
+.check-list li{
+    background:#fff;
+    margin-bottom:14px;
+    padding:15px 18px;
+    border-radius:14px;
+    color:#334155;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.check-list li:before{
+    content:"✓";
+    color:#2f5d50;
+    font-weight:900;
+    margin-right:10px;
+}
+
+/* RESOURCE CARDS */
+.resource-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.resource-card{
+    background:#fff;
+    border-radius:26px;
+    overflow:hidden;
+    box-shadow:0 14px 34px rgba(47,93,80,.12);
+}
+
+.resource-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.resource-body{
+    padding:28px;
+}
+
+.resource-body h3{
+    color:#2f5d50;
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.resource-body p{
+    color:#64748b;
+    margin-bottom:22px;
+}
+
+.resource-body a{
+    display:inline-block;
+    background:#e8d9bd;
+    color:#20342e;
+    padding:11px 24px;
+    border-radius:30px;
+    font-weight:800;
+}
+
+/* CTA BAND */
+.cta-band{
+    background:
+    linear-gradient(90deg,rgba(32,52,46,.94),rgba(47,93,80,.78)),
+    url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    border-radius:34px;
+    padding:75px;
+    color:#fff;
+    text-align:center;
+}
+
+.cta-band h2{
+    font-size:42px;
+    line-height:1.2;
+    margin-bottom:18px;
+}
+
+.cta-band p{
+    max-width:720px;
+    margin:auto;
+    color:#f8fafc;
+    font-size:18px;
+}
+
+/* FAQ */
+.faq-wrap{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    background:#fff;
+    margin-bottom:18px;
+    padding:28px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.07);
+}
+
+.faq-item h3{
+    color:#2f5d50;
+    margin-bottom:8px;
+}
+
+.faq-item p{
+    color:#64748b;
+}
+
+/* FOOTER */
+.footer{
+    background:#20342e;
+    color:#dbe7e2;
+    padding:35px 20px;
+    text-align:center;
+}
+
+.footer a{
+    color:#dbe7e2;
+    margin:0 10px;
+}
+
+.sticky-btn{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#2f5d50;
+    color:#fff;
+    padding:15px 26px;
+    border-radius:50px;
+    font-weight:800;
+    z-index:999;
+    box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+    .hero-grid,
+    .split{
+        grid-template-columns:1fr;
+    }
+
+    .strip{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .resource-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero h1{
+        font-size:44px;
+    }
+
+    .floating-card{
+        left:20px;
+    }
+}
+
+@media(max-width:650px){
+    .nav{
+        flex-direction:column;
+    }
+
+    .nav-links{
+        text-align:center;
+    }
+
+    .nav-links a{
+        display:inline-block;
+        margin:8px;
+    }
+
+    .hero{
+        padding:55px 0;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .strip,
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-head h2,
+    .text-box h2,
+    .cta-band h2{
+        font-size:30px;
+    }
+
+    .cta-band{
+        padding:45px 24px;
+    }
+
+    .floating-card{
+        position:static;
+        margin:18px auto 0;
+    }
+
+    .sticky-btn{
+        left:15px;
+        right:15px;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="nav">
+            <a href="index.html" class="logo">Daily Wellness Guide</a>
+
+            <div class="nav-links">
+                <a href="#resources">Resources</a>
+                <a href="#wellness">Wellness</a>
+                <a href="#faq">FAQ</a>
+                <a href="#" class="nav-btn">Explore Options</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+
+            <div>
+                <span class="badge">Simple Wellness Education</span>
+
+                <h1>Build Better Daily Wellness Habits</h1>
+
+                <p>
+                    Discover easy-to-understand wellness guidance focused on balanced routines,
+                    mindful choices, recovery, nutrition awareness, and lifestyle support.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#" class="btn">Explore Wellness Options</a>
+                    <a href="#resources" class="btn btn-light">View Resources</a>
+                </div>
+            </div>
+
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1100&q=80" alt="Healthy wellness food">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section" id="wellness">
+    <div class="container">
+
+        <div class="section-head">
+            <h2>Wellness Areas People Commonly Explore</h2>
+            <p>
+                Wellness can include many daily habits. These areas may help people create a more balanced routine.
+            </p>
+        </div>
+
+        <div class="strip">
+
+            <div class="strip-box">
+                <span>🥗</span>
+                <h3>Food Choices</h3>
+                <p>Learn how balanced meals and mindful eating can support general wellness.</p>
+            </div>
+
+            <div class="strip-box">
+                <span>🚶</span>
+                <h3>Daily Movement</h3>
+                <p>Simple movement habits may help people stay active and feel more balanced.</p>
+            </div>
+
+            <div class="strip-box">
+                <span>🌙</span>
+                <h3>Rest Routine</h3>
+                <p>Consistent rest and recovery habits are important parts of a wellness routine.</p>
+            </div>
+
+            <div class="strip-box">
+                <span>🍃</span>
+                <h3>Plant-Based Resources</h3>
+                <p>Some individuals explore plant-based wellness products and lifestyle resources.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="split">
+
+            <div>
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80" alt="Wellness routine">
+            </div>
+
+            <div class="text-box">
+                <h2>A Practical Approach To Everyday Wellness</h2>
+
+                <p>
+                    A balanced wellness routine does not need to be complicated. Many people start by improving
+                    simple daily habits such as hydration, rest, movement, meal planning, and mindful breaks.
+                </p>
+
+                <ul class="check-list">
+                    <li>Focus on simple and realistic lifestyle steps</li>
+                    <li>Explore educational wellness resources</li>
+                    <li>Support daily balance through routine and awareness</li>
+                    <li>Learn about wellness options without pressure</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="resources">
+    <div class="container">
+
+        <div class="section-head">
+            <h2>Helpful Wellness Resource Categories</h2>
+            <p>
+                Explore topic-based guidance designed for people looking for general wellness information.
+            </p>
+        </div>
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Nutrition wellness">
+                <div class="resource-body">
+                    <h3>Nutrition Awareness</h3>
+                    <p>
+                        Explore information about balanced food choices, daily hydration, and meal routine awareness.
+                    </p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80" alt="Mindful wellness">
+                <div class="resource-body">
+                    <h3>Mindful Living</h3>
+                    <p>
+                        Learn about calm routines, mindful breaks, stress awareness, and simple relaxation habits.
+                    </p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80" alt="Sleep wellness">
+                <div class="resource-body">
+                    <h3>Recovery & Rest</h3>
+                    <p>
+                        Understand why rest, sleep consistency, and recovery habits matter in daily wellness.
+                    </p>
+                    <a href="#">Explore Options</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="cta-band">
+            <h2>Explore Wellness Resources For Your Daily Routine</h2>
+            <p>
+                Find educational wellness information, lifestyle guidance, and plant-based wellness options that may fit your personal goals.
+            </p>
+
+            <a href="#" class="btn" style="margin-top:28px;background:#e8d9bd;color:#20342e;">
+                Explore Options
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="faq">
+    <div class="container">
+
+        <div class="section-head">
+            <h2>Common Questions</h2>
+            <p>
+                Basic answers about lifestyle wellness and general educational resources.
+            </p>
+        </div>
+
+        <div class="faq-wrap">
+
+            <div class="faq-item">
+                <h3>What is a wellness routine?</h3>
+                <p>
+                    A wellness routine may include daily habits related to food choices, movement, rest, hydration, and stress awareness.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is wellness the same for everyone?</h3>
+                <p>
+                    No. Wellness needs and preferences can vary depending on lifestyle, goals, daily schedule, and personal choices.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What type of resources are available here?</h3>
+                <p>
+                    This website provides general educational content about wellness habits, lifestyle choices, and available wellness options.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is this website for informational use?</h3>
+                <p>
+                    Yes. The content is intended for general informational and educational purposes only.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 Daily Wellness Guide. All Rights Reserved.</p>
+
+    <p style="margin-top:10px;">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms & Conditions</a> |
+        <a href="disclaimer.html">Disclaimer</a>
+    </p>
+</footer>
+
+</body>
+</html>
